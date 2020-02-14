@@ -41,7 +41,7 @@ mongoose
     return Recipe.findOneAndUpdate({ title: 'Rigatoni alla Genovese' }, { duration: 100 });
   })
   .then(() => {
-    console.log('Recipe is updated');
+    return Recipe.deleteOne({ title: 'Carrot Cake' }, function(err) {});
   })
   .then(Disconnect => {
     console.log('Disconnected');
